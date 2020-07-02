@@ -6,7 +6,8 @@
 
 {{error}}<br><br>
 {% endif %}
-<h1>signup!</h1>
+<h1>Sign Up!</h1>
+
 <form method="POST" action="{% url 'signup' %}">
 	{% csrf_token %}
 
@@ -16,7 +17,7 @@
 	<input type="password" placeholder="password" name="pwd">
 	<br>
 	<br>
-	<input type="password" name="cpwd" placeholder="cpwd">
+	<input type="password" name="cpwd" placeholder="confirm password">
 	<br><br>
 	<input type="submit" value="Sign up!" class="bth btn-primary">
 

@@ -9,12 +9,13 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.0.1">
-    <title>Umesh Suggala</title>
+    <title>Product Hunt</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
 
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
 <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
@@ -47,8 +48,8 @@
     <header>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-  <a class="navbar-brand" href="#">
-  <img src="{% static "admin/img/logo.png" %}" class="d-inline-block alighn-top">
+  <a class="navbar-brand" href="{% url 'home' %}">
+  <i class="fa fa-product-hunt" aria-hidden="true"></i>
   Product Hunt</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -56,6 +57,8 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav ml-auto">
       {% if user.is_authenticated %}
+      <p class="nav-item nav-link">Hello,{{user}}</p>
+        <a class="nav-item nav-link color-dark" href="{% url 'create' %}"><i class="fa fa-plus-square" aria-hidden="true"></i></a>
        <a class="nav-item nav-link" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
          <form id="logout" method="POST" action="{% url 'logout' %}">
            {% csrf_token %}
@@ -80,6 +83,7 @@
 <div class="container">
   
 {% block content %}
+
 {% endblock %}
 
 </div>
