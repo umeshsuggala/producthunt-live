@@ -19,7 +19,7 @@ def signup(req):
 			if pwd==cpwd:
 				user=User.objects.create_user(uname,password=pwd)
 				auth.login(req,user)
-				return redirect('login')
+				return redirect('home')
 			else:
 				return render(req,'signup.html',{'error':'password not matched'})
 	return render(req,'signup.html')
