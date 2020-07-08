@@ -24,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'h5pw(k=(v)e9$3h%66euh0%a+t-6-tm&rurono9e#7tuw#cx=c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['producthunt-umesh.herokuapp.com','127.0.0.1:8000']
 
 
 # Application definition
